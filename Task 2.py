@@ -17,13 +17,17 @@ while cont == ('y'):
         print("------Loading the stock file - this won't take a minute------")
         stockfile=open("//Client/N$/GCSE Computer Science/A453/Python/Stockfile.txt", "r") #this opens the text file
         stockline=stockfile.readlines() #reads the file and stores it as the variable 'stockfile' stockfile.close() closes the file)  
-        if (gtinCode) in stockfile:
-            productDescriptions = open("Products.txt", "w")
-            
-            
-        else:
-            print ("I'm sorry, the product that you asked for does not exist, please try again")
-            cont ('y')
+        for line in stockfile:
+            if (gtinCode) in line: 
+                print ("Here we go, I've found the product that you were looking for!")
+                print line
+                print ("Does that look okay?")
+            else:
+                print ("I'm sorry, the product that you were searching for could not be found. Press y to try again, or press q to quit"
+                if input() == ('y'):
+                    cont = ('y')
+                else:
+                    quit
 else:
     print ('Thanks, we hope you are satisfied with your purchase')
     quit
