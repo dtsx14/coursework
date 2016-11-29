@@ -17,13 +17,21 @@ while cont == ('y'):
         print("------Loading the stock file - this won't take a minute------")
         stockfile=open("//Client/N$/GCSE Computer Science/A453/Python/Stockfile.txt", "r") #this opens the text file
         stockline=stockfile.readlines() #reads the file and stores it as the variable 'stockfile' stockfile.close() closes the file)  
-        for line in stockfile:
-            if (gtinCode) in line: 
-                print ("Here we go, I've found the product that you were looking for!")
-                print line
-                print ("Does that look okay?")
+        for line in stockline:
+            if (gtinCode) in line:
+                splitfile = stockline.split
+                #The stockfile is now split into a list to be able to see the quantity, the quantity is a single digit at the end of the list, so the program will always select that digit, and then check it against the quantity that is entered by the user
+                itemquantity = splitfile[-1]
+                if itemquantity < quantity:
+                    print ("I'm sorry, there are not enough products available to fulfil your order, we only have " + itemquantity + (" left, press y to order another product, or press q to quit")
+                    reorderfile = open("
+                else:
+                    print ("Here we go, I've found the product that you were looking for!")
+                    print line
+                
+                
             else:
-                print ("I'm sorry, the product that you were searching for could not be found. Press y to try again, or press q to quit"
+                print ("I'm sorry, the product that you were searching for could not be found. Press y to try again, or press q to quit")
                 if input() == ('y'):
                     cont = ('y')
                 else:
