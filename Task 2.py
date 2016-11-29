@@ -22,13 +22,21 @@ while cont == ('y'):
                 splitfile = stockline.split
                 #The stockfile is now split into a list to be able to see the quantity, the quantity is a single digit at the end of the list, so the program will always select that digit, and then check it against the quantity that is entered by the user
                 itemquantity = splitfile[-1]
-                if itemquantity < quantity:
+                if (itemquantity) < (quantity):
                     print ("I'm sorry, there are not enough products available to fulfil your order, we only have " + itemquantity + (" left, press y to order another product, or press q to quit")
-                    reorderfile = open("
+                    reorderfile = open("StockReorderFile.txt", "w")
+                    reorderfile.write (line)
+                    reorderfile.close
+                    print ("Would you like to try again? (y/n)")
+                    if input() == ('y'):
+                           cont = ('y')
+                    else:
+                        quit
                 else:
                     print ("Here we go, I've found the product that you were looking for!")
                     print line
-                
+                    print ("Would you like to search for another product?"
+                    cont = input()
                 
             else:
                 print ("I'm sorry, the product that you were searching for could not be found. Press y to try again, or press q to quit")
